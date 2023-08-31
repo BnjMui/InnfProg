@@ -1,15 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail-link</title>
+</head>
 
-<p id="maillink"></p>
-
-<script>
+<body>
+    <p id="maillink"></p>
+    <script>
 
     const name = "jonas";
     const mail = "jonasae@hiof.com";
-    const emailLink = `${name} ${mail}`;
-    <a href="mailto:jonasae@hiof.no">Send mail til jonas</a>
-
-    const utskrift = (`"send mail til" ${emailLink}`) 
-
-    document.getElementById("maillink").innerHTML = utskrift;
+    const mailLink = `${name} ${mail}`
+    <a href="mailto:jonasae@hiof.no">"Send mail til Jonas</a>
+    
 
 </script>
+</body>
+</html>

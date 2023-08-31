@@ -2,17 +2,17 @@
 <p id= "average"></p>
 
 <script>
-    const far = 37
-    const mor = 32
-    const datter = 7
-    const sonn = 2
+    const dad = 37
+    const mom = 32
+    const daughter = 7
+    const son = 2
 
 
-const average = (far + mor + datter + sonn) / 4
-console.log (average)
+const totalAge = dad+mom+daughter+son
+const averageAge = totalAge / 4
 
 
-const utskrift = ("gjennomsnittsalderen er " + " " + average)
+const utskrift = ("gjennomsnittsalderen er " + " " + averageAge)
 
 document.getElementById("average").innerHTML = utskrift;
 </script>
