@@ -8,15 +8,18 @@
 
 <body>
     <p id="mailStandard"></p>
+    <p id="MailTempLit"></p>
     <script>
 
-    const name = "Jonas A. Evensen";
-    const mail = "jonasae@hiof.com";
+    const name = "Jonas A. Evensen"
+    const mail = "jonasae@hiof.com"
     const mailCodeStandard = "<a href=`mailto:" + mail + "`>Send epost til " + name + "</a>"
-    document.getElementById(mailStandard).innerHTML = mailCodeStandard;
-    
     //Standard konkantinering med plusstegn
+    document.getElementById("mailStandard").innerHTML = mailCodeStandard
 
+    //Template literals
+    const mailCodeTempLit = `<a href="mailto:${mail}">Send epost til ${name}</a>`
+    document.getElementById("MailTempLit").innerHTML = mailCodeTempLit
 </script>
 </body>
 </html>
