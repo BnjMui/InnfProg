@@ -25,8 +25,20 @@
         const movieExists = movieArchive.includes("Frozen")
         console.log("Frozen finnes? " + movieExists)
 
+        //Sortere arrayen alfabetisk fra A-Å:
+        movieArchive.sort()
+        //Snu array på hodet for å få sortering Å-A (viktig at .sort() gjøres først):
+        movieArchive.reverse()
+
+        const numberArray = [99, 2, 45, 32, 10, 78]
+        //Sortere array med tall fra minst til størst:
+        numberArray.sort(function(a, b) {return a - b})
+        //Sortere array med tall fra størst til minst:
+        //numberArray.sort(function(a, b) {return b - a})
+
          //Teste at arrayen funker
          console.log(movieArchive)
+         console.log(numberArray)
     </script>
     
 </body>
