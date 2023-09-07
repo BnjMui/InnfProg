@@ -17,22 +17,19 @@
         let antall_jenter = 0
 
         if(barn1 == "gutt"){
-            antall_gutter += 1
+            antall_gutter++
         } else{
-            antall_jenter += 1
+            antall_jenter++
         }
         if(barn2 == "gutt"){
-            antall_gutter += 1
+            antall_gutter++
         } else {
-            antall_jenter += 1
+            antall_jenter++
         }
-        if(barn3 == "gutt"){
-            antall_gutter += 1
-        } else {
-            antall_jenter += 1
-        }
+        //samme test for barn3, med ternary operator
+        barn3 === "gutt" ? antall_gutter++ : antall_jenter++
 
-        document.getElementById("Jenter og gutter i klassen").innerHTML = `Gutter: ${antall_gutter}, Jenter: ${antall_jenter}`
+        document.getElementById("Jenter og gutter i klassen").innerHTML = `Gutter: ${antall_gutter}. Jenter: ${antall_jenter}.`
         
     </script>
 </body>
