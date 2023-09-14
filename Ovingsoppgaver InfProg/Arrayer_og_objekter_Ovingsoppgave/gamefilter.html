@@ -40,11 +40,12 @@
             }
         ]
 
-            const iOS_includes = .includes("iOS")
-            console.log(iOS_includes)
-
-        const iOSGames = games.filter(iOSplatform => iOSplatform.platforms === "iOS")
-        console.log(iOSGames)
+            const iOSgames = games.filter((game) => game.platforms.includes("iOS"))
+            console.log(iOSgames)
+            let iOSgamesHTML = ""
+            iOSgames.map(element => iOSgamesHTML += `<li>${element.title}</li>`)
+            document.getElementById("filter").innerHTML = iOSgamesHTML
+            
     </script>
     
 </body>
