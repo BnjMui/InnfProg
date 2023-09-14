@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyr-sortert øvingsoppgave</title>
+</head>
+<body>
+    <p id="antallDyr"></p>
+    <p id="hvilkeDyr"></p>
+    <script>
+
+        const dyr = [
+            "Hund",
+            "Katt",
+            "Hest",
+            "Kanin",
+            "Elg",
+            "Ku",
+            "Sau",
+            "Geit",
+            "Frosk",
+            "Mus"
+        ]
+
+
+        dyr.push ("Humle", "Grevling")
+        dyr.sort()
+        //console.log(dyr)
+        //console.log(...dyr)
+
+
+        const antallDyr = dyr.length
+        //console.log(antallDyr)
+        
+        
+        document.getElementById("antallDyr").innerHTML = `Antall dyr: ${antallDyr}.`
+        document.getElementById("hvilkeDyr").innerHTML = `${dyr.join(", ")}`
+
+    </script>
+</body>
+</html>

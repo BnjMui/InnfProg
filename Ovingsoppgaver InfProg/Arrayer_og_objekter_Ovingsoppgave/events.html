@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events øvingsoppgave</title>
+</head>
+<body>
+    <ul id="events"></ul>
+
+    <script>
+
+        const events = [
+            {
+                year: 1969, 
+                event: "The creation of ARPANET"
+            },
+            {
+                year: 1971,
+                event: "The first email sendt"
+            },
+            {
+                year: 1981,
+                event: "IMB launches a PC"
+            },
+            {
+                year: 1990,
+                event: "Tim Berers Lee launches the first website"
+            },
+            {
+                year: 1998,
+                event: "Google was founded"
+            }
+        ]
+        //console.log(events)
+
+        let eventListHTML = ""
+        events.map(element => eventListHTML += `<li>${element.year}: ${element.event}</li>`)
+        document.getElementById("events").innerHTML = eventListHTML
+    </script>
+    
+</body>
+</html>
