@@ -41,7 +41,7 @@
         ]
 
             const iOSgames = games.filter((game) => game.platforms.includes("iOS"))
-            console.log(iOSgames)
+            //console.log(iOSgames)
             let iOSgamesHTML = ""
             iOSgames.map(element => iOSgamesHTML += `<li>${element.title}</li>`)
             document.getElementById("filter").innerHTML = iOSgamesHTML
