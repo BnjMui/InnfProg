@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Øvingsoppgave 1 - Løkker</title>
+    </head>
+    <body>
+        <ul id="nedtelling">
+
+        </ul>
+        <script>
+            let htmlString = "";
+
+            for(let teller = 11; teller <= 0, teller = teller - 1;)  {
+                console.log(teller)
+                
+                htmlString += `<li>${teller <= 0 ? "We have take-off" : "We do not have take off"}</li>`;
+            }
+
+            document.getElementById("nedtelling").innerHTML = htmlString
+
+        </script>
+    </body>
+</html>
