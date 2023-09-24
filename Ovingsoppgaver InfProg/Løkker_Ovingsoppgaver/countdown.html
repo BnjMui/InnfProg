@@ -9,15 +9,17 @@
 
         </ul>
         <script>
-            let htmlString = "";
+            let countDown = "";
 
-            for(let teller = 11; teller <= 0, teller = teller - 1;)  {
+            for(let teller = 10; teller >= 0; teller--)  {
                 console.log(teller)
-                
-                htmlString += `<li>${teller <= 0 ? "We have take-off" : "We do not have take off"}</li>`;
-            }
 
-            document.getElementById("nedtelling").innerHTML = htmlString
+                
+
+                teller == 0 ? countDown+= `<li>We have take-off</li>`: countDown += `<li>${teller}</li>`
+               
+            }
+            document.getElementById("nedtelling").innerHTML = countDown
 
         </script>
     </body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <title>Document</title>
+
+</head>
+<body>
+    <!--Oppgave 3: liste opp dyr
+Lag en ny HTML-fil kalt animalList.html. Lag klar en <ul>-tag med id "animals".
+Lag en variabel kalt animals, som skal inneholde en indexert array med cirka 10 dyr (hvis du har gjort andre øvingsoppgaver tidligere, har du vel kanskje en fra før...?).
+Lag en variabel htmlString med en tom tekststreng som verdi.
+Bruk en for-løkke for å gå gjennom arrayen animals, og bygge htmlString med listeelementer ala <li>dyrenavn</li>, hvor dyrenavn er verdien fra arrayen.
+Skriv ut den ferdige htmlString til id-en "animals".-->
+    
+    <ul id="animals"></ul>
+
+
+    <script>
+        const animals = [
+            "Hund",
+            "Katt",
+            "Hest",
+            "kanin",
+            "Elg",
+            "ku",
+            "Sau",
+            "Geit",
+            "Frosk",
+            "Mus"
+        ]
+
+        let htmlString = ""
+        for(let i = 0; i < animals.length; i++){
+            console.log(animals[i]);
+            htmlString += `<li>${animals[i]}</li>`
+        }
+        document.getElementById("animals").innerHTML = htmlString
+
+    </script>
+
+</body>
+</html>

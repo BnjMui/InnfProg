@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countDownWhile</title>
+</head>
+<body>
+    <ul id="nedtelling">
+
+    </ul>
+    <script>
+        let countDown = "";
+        let teller = 10
+
+        while(teller >= 0){
+            console.log(teller);
+            
+            countDown += `<li>${teller === 0 ? "we have take-off" : teller}</li>`
+            teller--
+            }
+
+        document.getElementById("nedtelling").innerHTML = countDown
+    </script>
+</body>
+</html>
