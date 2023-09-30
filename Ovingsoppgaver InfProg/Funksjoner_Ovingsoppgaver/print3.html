@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print3 Øvingsoppgave</title>
+</head>
+<body>
+    <p id="name"></p>
+    <p id="mail"></p>
+    <p id="age"></p>
+    <script>
+        function printInfo(name = "not provided", birthyear = "not provided", email = "not provided") {
+            document.getElementById("name").innerHTML = name
+            document.getElementById("mail").innerHTML = email
+            if (birthyear == "not provided") {
+                document.getElementById("age").innerHTML = birthyear
+            }else{
+                Number(birthyear)
+                let age = 2023 - birthyear
+                document.getElementById("age").innerHTML = age
+            }
+        }
+        printInfo("Jonas A. Evensen", "2002", "jonasae@hiof.no")
+    </script>
+    
+</body>
+</html>
