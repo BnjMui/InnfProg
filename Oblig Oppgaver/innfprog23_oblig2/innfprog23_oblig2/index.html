@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>InnfProg Oblig 2</h1>
-        <button id="toggleMenu" aria-label="Open the menu">Menu <img src="menuicon.png" aria-hidden="true"></button>
+        <button id="toggleMenu" aria-label="Open the menu">Menu <img src="menuicon.png" alt="menuicon" aria-hidden="true"></button>
         <nav id="menu">
             <!-- Eksempel: oppbygging av meny -->
             <ul>
@@ -62,29 +62,21 @@
 
         //Variabel for meny-HTML
         //TODO: Skal ikke starte som en tom streng, må inneholde noe HTML for å møte oppgaveteksten...
-        let menuHTML = `<ul> `
+        let menuHTML = ""
 
         //Gå gjennom første nivå av menupoints-array
         menuPoints.map(category => {
             //TODO: Forbered HTML med overskrift og listestart
-                let h2 = document.createElement ("h2")
-                h2.innerText = category.menuheader
-                //menuHTML += h2
-                category.menulinks.map(link => {
-                    let li = document.createElement("li")
-                    li.innerText = `<a href=${link.url}>${link.menutext}</a>`
-                    menuHTML += h2 +li + `</ul>`
-                    document.getElementById("menu").innerHTML = menuHTML
-                    //document.getElementById("menu").appendChi
-                    
-
-                })
+                const h2 = `<ul><h2>${category.menuheader}</h2>`
                 //TODO: Gå gjennom array på andre nivå (menulinks)
+                const menulinks = category.menulinks.map(links => `<li><a href="${links.url}"></a>${links.menutext}</li>`) 
+                    menuHTML += h2 + menulinks.join("") + "</ul>"
             //TODO: For hver menulink: fyll menuHTML med listeelementer og link
             //TODO: Avslutt liste
-            
         })
-console.log(menuHTML)
+        console.log(menuHTML)
+        document.getElementById("menu").innerHTML= menuHTML
+        
         //TODO: Skriv ut HTML til <nav>:
         
     </script>
