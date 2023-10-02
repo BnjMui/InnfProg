@@ -69,8 +69,8 @@
             //TODO: Forbered HTML med overskrift og listestart
                 const h2 = `<ul><h2>${category.menuheader}</h2>`
                 //TODO: Gå gjennom array på andre nivå (menulinks)
-                const menulinks = category.menulinks.map(links => `<li><a href="${links.url}"></a>${links.menutext}</li>`) 
-                    menuHTML += h2 + menulinks.join("") + "</ul>"
+                const menulinks = category.menulinks.map(links => `<li><a href="${links.url}">${links.menutext}</a></li>`) 
+                    menuHTML += h2 + menulinks.join("") + "</ul>" //Her tullet jeg skikkelig og måtte bruke en video for å forstå litt mer. videolink: https://youtu.be/G3BS3sh3D8Q?si=QO6x5euNWOhIFkD9&t=124
             //TODO: For hver menulink: fyll menuHTML med listeelementer og link
             //TODO: Avslutt liste
         })
