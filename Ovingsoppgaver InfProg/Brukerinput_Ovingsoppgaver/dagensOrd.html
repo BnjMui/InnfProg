@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dagens Ord</title>
+        <body>
+            <h1>Dagens ord er: <span id="ord"></h1>
+            <input type="text" name="brukerord" id="brukerord" onkeydown="enter()">
+            <button type="button" id="sendord">Lagre ord</button>
+                <script>
+                    
+                    
+                    
+                    const btn = document.getElementById("sendord")
+                    btn.addEventListener("click", printOrd)
+                    function printOrd(){
+                        const userWord = document.getElementById("brukerord")
+                        //console.log(userWord)
+                        document.getElementById("ord").innerHTML = userWord.value
+                        userWord.value = ""
+                        userWord.focus()
+                        console.log("funksjonen har kjørt")
+                    }
+                        // Forsøk på å bruke "Enter" til å kljøre koden
+                    function enter(ele) { 
+                        if(event.key == "Enter"){
+                            const userWord = document.getElementById("brukerord")
+                        //console.log(userWord)
+                        document.getElementById("ord").innerHTML = userWord.value
+                        userWord.value = ""
+                        userWord.focus()
+                        console.log("funksjonen har kjørt")
+                            
+                        }
+                        
+                        
+                    }
+                </script>
+        </body>
+    </head>
+</html>
