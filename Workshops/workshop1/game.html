@@ -99,8 +99,6 @@
             functions: 7
         }
         
-
-
         function updateStaticUI(){
             if(gameConfig.playerName == ""){
             document.getElementById("playerName").innerHTML = "Waiting for player..."
@@ -118,6 +116,31 @@
         }
         updateStaticUI()
         
+        //console.log(document.getElementById("info").classList)
+        
+
+        function toggleVisibility(elementid){
+            const element = document.getElementById(elementid)
+            console.log(element.classList)
+            element.classList
+            if(element.classList === "hidden"){
+                element.classList.remove("hidden")
+                element.style.display = "block"
+            }else{
+                element.classList.add("hidden")
+                element.style.display = "none"
+            }
+        }
+        
+        const infobtn = document.getElementById("infoToggler")
+        const notebookbtn = document.getElementById("notebookToggler")
+        infobtn.addEventListener("click", function(){
+            toggleVisibility("info")
+        })
+        notebookbtn.addEventListener("click", function(){
+            toggleVisibility("notebook")
+        })
+
     </script>
 </body>
 </html>
