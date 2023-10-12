@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator 2</title>
+</head>
+<body>
+    <input type="number" name="tall1" id="tall1">
+    <label for="operator">Velg utregning</label>
+    <select name="operator" id="operator">
+        <option value="pluss">Pluss</option>
+        <option value="minus">Minus</option>
+        <option value="dele">Dele</option>
+        <option value="gange">Gange</option>
+    </select>
+    <input type="number" name="tall2" id="tall2">
+    <button type="button" name="regnut" id="regnut">Regn ut</button>
+    <h2>Resultat: <span id="resultat"></span></h2>
+    <script>
+        const tall1 = document.getElementById("tall1")
+        const tall2 = document.getElementById("tall2")
+        const operator = document.getElementById("operator")
+        const resultat = document.getElementById("resultat")
+        const btn = document.getElementById("regnut")
+
+        //Her tar jeg imot 3 verdier, navnene her er det de heter inne i funksjonen
+        function utregning(tall1,operator,tall2){
+            if(operator === "pluss"){
+                resultat.innerHTML = tall1 + tall2
+            }else if(operator === "minus"){
+                resultat.innerHTML = tall1 - tall2
+            }else if(operator === "dele"){
+                resultat.innerHTML = tall1 / tall2
+            }else if(operator === "gange"){
+                resultat.innerHTML = tall1 * tall2
+            }
+        }
+        //Her sender jeg parameterverdiene til funksjonen
+        btn.addEventListener("click", function(){
+            utregning(parseInt(tall1.value), operator.value, parseInt(tall2.value))
+        })
+    </script>
+</body>
+</html>

@@ -15,12 +15,37 @@
     <h2>Resultat: <span id="resultat"></span></h2>
 
     <script>
-        const tall1 = document.getElementById("tall1").value
-        const tall2 = document.getElementById("tall1").value
-        const pluss = document.getElementById("pluss").addEventListener("click",)
-        const minus = document.getElementById("minus").addEventListener("click",)
-        const dele = document.getElementById("dele").addEventListener("click",)
-        const gange = document.getElementById("gange").addEventListener("click",)
+        const tall1 = document.getElementById("tall1")
+        const tall2 = document.getElementById("tall2")
+        const pluss = document.getElementById("pluss")
+        const minus = document.getElementById("minus")
+        const dele = document.getElementById("dele")
+        const gange = document.getElementById("gange")
+        const resultat = document.getElementById("resultat")
+
+        pluss.addEventListener("click", fPluss)
+        minus.addEventListener("click", fMinus)
+        dele.addEventListener("click", fDele)
+        gange.addEventListener("click", fGange)
+        
+        function fPluss(){
+            const utregning = Math.floor(tall1.value) + Math.floor(tall2.value)
+            resultat.innerHTML = utregning
+            console.log (typeof tall1.value)
+            console.log(utregning)
+        }
+        function fMinus(){
+            const utregning = Math.floor(tall1.value) - Math.floor(tall2.value)
+            resultat.innerHTML = utregning
+        }
+        function fDele(){
+            resultat.innerHTML = Math.floor(tall1.value)/Math.floor(tall2.value)
+        }
+        function fGange(){
+            resultat.innerHTML = Math.floor(tall1.value)*Math.floor(tall2.value)
+        }
+        
+        
     </script>
 </body>
 </html>
