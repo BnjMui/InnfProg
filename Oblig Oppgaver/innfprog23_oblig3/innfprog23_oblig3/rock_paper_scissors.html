@@ -132,6 +132,7 @@
             <button type="button" onClick="play('rock')" id="rockButton" class="playerChoice"><img src="rock.png" alt="Rock" /></button> <!--Linjenummer 132: Fikset skrivefeil i onclick, her sto det "playy", endret dette til "play"-->
             <button type="button" onClick="play('paper')" id="paperButton" class="playerChoice"><img src="paper.png" alt="Paper" /></button>
             <button type="button" onClick="play('scissors')" id="scissorsButton" class="playerChoice"><img src="scissors.png" alt="Scissors" /></button>
+            <button type="button" onClick="play('nerfgun')" id="nerfgunButton" class="playerChoice"><img src="nerfgun.png" alt="Nerfgun" /></button>
         </div>
         <div id="selection">
             <!-- HTML element to show player selection -->
@@ -161,8 +162,7 @@
         let computerWins = 0
         let draws = 0
         //Make available signs available in code as an array
-        const signs = ["rock", "paper", "scissors"]
-        
+        const signs = ["rock", "paper", "scissors", "nerfgun"]
         //Find all buttons in the document.
         const buttons = document.querySelectorAll(".playerChoice");
         /* 
@@ -205,7 +205,7 @@
             // That means we can create a function that does this for us. So it is done below this function.
             // Now, let's use it to get a random number from 0 (first index of an array) to array.length - 1
             // (maximum index of an array is its length minus 1)
-            const randomIndex = getRandomInt(signs.length - 1)
+            const randomIndex = getRandomInt(signs.length)
             //Now we can call the random computer selected sign from the signs-array:
             const computerSign = signs[randomIndex]
             //Lets write the computer selection to the console to make sure we have a valid hit:
@@ -225,11 +225,25 @@
                 if(playerSign === computerSign){
                     winner = "undecided"
                 }else{
-                        if(playerSign === "paper") {
-                        if(computerSign === "rock") {
+                    if(playerSign === "nerfgun"){
+                        if(computerSign === "rock"){
+                            winner = "computer"
+                        }
+                        if(computerSign === "paper"){
                             winner = "player"
                         }
+                        if(computerSign === "scissors"){
+                            winner = "player"
+                        }
+                    }
+                    if(playerSign === "paper") {
+                        if(computerSign === "rock") {
+                             winner = "player"
+                        }
                         if(computerSign === "scissors") {
+                            winner = "computer"
+                        }
+                        if(computerSign === "nerfgun"){
                             winner = "computer"
                         }
                     }
@@ -240,6 +254,9 @@
                         if(computerSign === "paper") {
                             winner = "computer"
                         }
+                        if(computerSign === "nerfgun"){
+                            winner = "player"
+                        }
                     }
                     if(playerSign === "scissors") {
                         if(computerSign === "rock") {
@@ -247,6 +264,9 @@
                         }
                         if(computerSign === "paper") {
                             winner = "player"
+                        }
+                        if(computerSign === "nerfgun"){
+                            winner = "computer"
                         }
                     }
                 }
@@ -256,8 +276,8 @@
             //Now you know the drill: show #winner by display: block and fill it with HTML:
             const winnerDiv = document.getElementById("winner")
             winnerDiv.style.display = "block"
-            
-            if(checkWinner(playerSign, computerSign) === "undecided"){
+            setTimeout((winner) => {
+                          if(checkWinner(playerSign, computerSign) === "undecided"){
                 winnerDiv.style.backgroundColor = ""
                 winnerDiv.innerHTML = "It`s a tie!"
                 draws = draws + 1
@@ -272,6 +292,9 @@
                     computerWins = computerWins + 1
                 }
             }
+            }, 1000);
+
+  
             //winnerDiv.innerHTML = "The winner is " + winner
             
             /* OPPGAVE 2.2: FORKLAR HVA SOM SKJER PÅ LINJE 254
@@ -306,12 +329,12 @@
             document.getElementById("selection").style.display = "none"
             document.getElementById("computer").style.display = "none"
             document.getElementById("winner").style.display = "none"
+            document.getElementById("winner").innerHTML = ""
             //And hide the play again-button:
             document.getElementById("replay").style.display = "none"
-            
         }
 
-        //Function for random numnber, fetched from MDN web docs:
+        //Function for random number, fetched from MDN web docs:
         function getRandomInt(max) {            //Linjenummer 292: Fikset skrivefeil, her sto det "unction", endret dette til function.
             return Math.floor(Math.random() * max);
         }
