@@ -205,9 +205,9 @@
             // That means we can create a function that does this for us. So it is done below this function.
             // Now, let's use it to get a random number from 0 (first index of an array) to array.length - 1
             // (maximum index of an array is its length minus 1)
-            const randomIndex = getRandomInt(signs.length)
+            const randomIndex = getRandomInt(signs.length)//Her skjer det noe veldig merkelig jeg ikke kan forklare. Etter å ha lagt inn "nerfgun" som et valg å spille med, klarte ikke computer å velge lengre enn index 2 i koden, selv om det nå gikk opp til index 3. Jeg testet å flytte på hvilket sign som sto bakerst, og det var selve index 3 det ikke var mulig å velge på. Hvis jeg fjerner "-1" fra signs.length fungerer spillet helt fint, uten å noensinne få undefined. Jeg vet at dette ikke har noe å si for godkjent/ikke godkjent, men ville nevne det ettersom jeg ikke helt forstår hvor det kan ha gått galt her.
             //Now we can call the random computer selected sign from the signs-array:
-            const computerSign = signs[randomIndex]
+            const computerSign = signs[randomIndex] 
             //Lets write the computer selection to the console to make sure we have a valid hit:
             console.log("Computer selected: " + computerSign)
             // Good! Now we also have to show this on the website, by making #computer visible and filling it with HTML:
