@@ -26,8 +26,8 @@
         </section>
         <img src="icons/c3_logo.svg" alt="Code Concept Collector" />
         <nav>
-            <button id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
-            <button id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
+            <button id="notebookToggler" ><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
+            <button id="infoToggler" >Info / Hvordan spille <span class="shortcut">i</span></button>
         </nav>
     </header>
     <main>
@@ -123,9 +123,9 @@
             const element = document.getElementById(elementid)
             console.log(element.classList)
             element.classList
-            if(element.classList === "hidden"){
+            if(element.classList.value === "hidden"){
                 element.classList.remove("hidden")
-                element.style.display = "block"
+                element.style.display = "flex"
             }else{
                 element.classList.add("hidden")
                 element.style.display = "none"
@@ -138,9 +138,23 @@
             toggleVisibility("info")
         })
         notebookbtn.addEventListener("click", function(){
-            toggleVisibility("notebook")
+            toggleVisibility("notebook-page")
+        })
+        document.addEventListener("keydown", event => {
+            if(event.key == "n"){
+                toggleVisibility("notebook-page")
+            }else if(event.key == "i"){
+                toggleVisibility("info")
+            }
         })
 
+        function updateSingleStaticUI(element, value){
+            document.getElementById(element).innerHTML = value
+        }
+
+        function updateConfigValue(configType, value){
+            
+        }
     </script>
 </body>
 </html>
